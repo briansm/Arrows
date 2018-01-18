@@ -6,6 +6,17 @@ var teclas ={
 };
 
 document.addEventListener("keydown", dibujarTeclado);
+var cuadrito= document.getElementById("Area");
+var papel=cuadrito.getContext("2d");
+function dibujarline(color,xini,xfin,yini,yfin,lienzo){
+  lienzo.beginPath();
+  lienzo.strokeStyle=color;
+  lienzo.moveTo(xini,yini);
+  lienzo.lineTo(xfin,yfin);
+  lienzo.stroke();
+  lienzo.closePath();
+}
+
 function dibujarTeclado(evento){
     switch(evento.keyCode){
       case teclas.UP:
